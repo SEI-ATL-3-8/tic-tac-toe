@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(0, 0, 0);
+}
+button{
+    background-color:rgb(193, 41, 46);
+    height: 40px;
+    width: 70px
+}
+.container{
+    display:flex;
+    justify-content: center;
+}
+.hidden{
+    display: none;
+}
+.oImg{
+    width: 90px;
+    height: 90px;
+}
+.xImg{
+    width:90px;
+    height:90px
+}
+.spaces{
+    width:90px;
+    height:90px;
+    border: solid;
+    border-color:rgb(35, 87, 137);
+}
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#winner{
+    color: rgb(193, 41, 46);
+}
+#turn{
+    color: rgb(193, 41, 46);
+    padding: 10px;
+}
