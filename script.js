@@ -83,7 +83,7 @@ function checkWin() {
             return true
         }
         else if(allX[3].classList[1] !== "hidden" && allX[4].classList[1] !== "hidden" && allX[5].classList[1] !== "hidden"){
-            win()
+            win("X")
             console.log('x wins')
             return true
         }
@@ -93,27 +93,27 @@ function checkWin() {
             return true
         }
         else if(allX[0].classList[1] !== "hidden" && allX[3].classList[1] !== "hidden" && allX[6].classList[1] !== "hidden"){
-            win()
+            win("X")
             console.log('x wins')
             return true
         }
         else if(allX[1].classList[1] !== "hidden" && allX[4].classList[1] !== "hidden" && allX[7].classList[1] !== "hidden"){
-            win()
+            win("X")
             console.log('x wins')
             return true
         }
         else if(allX[2].classList[1] !== "hidden" && allX[5].classList[1] !== "hidden" && allX[8].classList[1] !== "hidden"){
-            win()
+            win("X")
             console.log('x wins')
             return true
         }
         else if(allX[0].classList[1] !== "hidden" && allX[4].classList[1] !== "hidden" && allX[8].classList[1] !== "hidden"){
-            win()
+            win("X")
             console.log('x wins')
             return true
         }
         else if(allX[6].classList[1] !== "hidden" && allX[4].classList[1] !== "hidden" && allX[2].classList[1] !== "hidden"){
-            win()
+            win("X")
             console.log('x wins')
             return true
         }
@@ -122,35 +122,35 @@ function checkWin() {
     else{
         console.log("check o");
         if (allO[0].classList[1] !== "hidden" && allO[1].classList[1] !== "hidden" && allO[2].classList[1] !== "hidden"){
-            win()
+            win("O")
             console.log("o wins")
         }
         else if(allO[3].classList[1] !== "hidden" && allO[4].classList[1] !== "hidden" && allO[5].classList[1] !== "hidden"){
-            win()
+            win("O")
             console.log('o wins')
         }
         else if(allO[6].classList[1] !== "hidden" && allO[7].classList[1] !== "hidden" && allO[8].classList[1] !== "hidden"){
-            win()
+            win("O")
             console.log('o wins')
         }
         else if(allO[0].classList[1] !== "hidden" && allO[3].classList[1] !== "hidden" && allO[6].classList[1] !== "hidden"){
-            win()
+            win("O")
             console.log('o wins')
         }
         else if(allO[1].classList[1] !== "hidden" && allO[4].classList[1] !== "hidden" && allO[7].classList[1] !== "hidden"){
-            win()
+            win("O")
             console.log('o wins')
         }
         else if(allO[2].classList[1] !== "hidden" && allO[5].classList[1] !== "hidden" && allO[8].classList[1] !== "hidden"){
-            win()
+            win("O")
             console.log('o wins')
         }
         else if(allO[0].classList[1] !== "hidden" && allO[4].classList[1] !== "hidden" && allO[8].classList[1] !== "hidden"){
-            win()
+            win("O")
             console.log('o wins')
         }
         else if(allO[6].classList[1] !== "hidden" && allO[4].classList[1] !== "hidden" && allO[2].classList[1] !== "hidden"){
-            win()
+            win("O")
             console.log('o wins')
         }
         
