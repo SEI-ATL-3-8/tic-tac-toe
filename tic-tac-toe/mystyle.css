@@ -1,0 +1,55 @@
+* {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.container {
+    
+    border: 1px solid;
+    margin: 50px;
+}
+
+.title {
+    text-align: center;
+}
+
+.reset {
+    cursor: pointer;
+    height: 30px;
+    
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    
+  
+}
+
+.cell {
+    background-color: royalblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.x::before{
+    content: 'x';
+    font-size: 100px;
+}
+.o::before{
+    content: 'o';
+    font-size: 100px;
+}
