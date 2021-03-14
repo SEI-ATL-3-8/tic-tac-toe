@@ -6,8 +6,8 @@ const allGrids = document.querySelectorAll('.grid-square')
 
 let turnNbr = 0;
 let maxTurns = 9;
-//let xPlays = [];
-//let oPlays = [];
+// let xPlays = [];
+// let oPlays = [];
 
 document.getElementById("reset").addEventListener("click", (event) => {
     for (let i = 0; i < allGrids.length; i++){
@@ -18,34 +18,34 @@ document.getElementById("reset").addEventListener("click", (event) => {
     setTurn()
 })
 
-// const evaluateBoard = () =>
-// {
-//     for (let j = 0; j < allGrids.length; j++){
+const evaluateBoard = () =>
+{
+    for (let j = 0; j < allGrids.length; j++){
 
-//         turnNbr = 0
+        turnNbr = 0
 
-//         if (
-//         !document.getElementById('oimg' + j).classList.contains('hidden') ||
-//         !document.getElementById('ximg' + j).classList.contains('hidden'))
-//         {turnNbr++}
+        if (!document.getElementById('oimg' + j).classList.contains('hidden') ||
+            !document.getElementById('ximg' + j).classList.contains('hidden'))
+        {turnNbr++}
 
-//         if(!document.getElementById('oimg' + j).classList.contains('hidden')){
-//             oPlays[j] = true
-//         }
+        // if(!document.getElementById('oimg' + j).classList.contains('hidden')){
+        //     oPlays[j] = true
+        // }
 
-//         if(!document.getElementById('ximg' + j).classList.contains('hidden')){
-//             xPlays[j] = true
-//         }
+        // if(!document.getElementById('ximg' + j).classList.contains('hidden')){
+        //     xPlays[j] = true
+        // }
 
-//     }
-//     console.log('Turn number is' + turnNbr)
+    }
+    console.log('Turn number is' + turnNbr)
+    return turnNbr
 
         
-//     // go thru allgrids and count number of turns
-//     // if beginning of game, say something about that
-//     // check for win
-//     // if end of game, say soemthing about that
-// }
+    // go thru allgrids and count number of turns
+    // if beginning of game, say something about that
+    // check for win
+    // if end of game, say soemthing about that
+}
 
 
 const setTurn = () => {
@@ -56,10 +56,12 @@ const setTurn = () => {
     
 }
 
+turnNbr = evaluateBoard()
 setTurn() // Setting turn at beginning of game
 
 for (let i = 0; i < allGrids.length; i++) {
     allGrids[i].addEventListener('click', (event) => {
+        
         
         console.log(turnNbr)
         
