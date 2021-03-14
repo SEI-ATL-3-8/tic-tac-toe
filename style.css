@@ -1,0 +1,39 @@
+header {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.gameboard {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 100px 100px 100px;
+    font-size: 80px;
+}
+
+.row1,
+.row2,
+.row3 {
+    width: 100px;
+    height: 100px;
+    border: black solid 2px;
+}
+
+.container {
+    text-align: center;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row1:hover,
+.row2:hover,
+.row3:hover {
+    background-color: blue;
+}
+
+#message {
+    padding-top: 25px;
+}
