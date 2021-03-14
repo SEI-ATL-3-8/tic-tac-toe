@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display:flex;
+    background-color: rgb(185, 178, 178);
+    color:rgb(128, 58, 128); 
+    justify-content: center;
+    font-family: 'Fredoka One';
+
+    
+  }
+
+.container{
+    background-color: rgb(220, 119, 220);
+    border-radius: 20px;
+    margin: 50px;
+    padding:20px;
+    
+}
+
+.tictac{
+    text-align: center;
+}
+h3{
+    display: flex;
+    justify-content: space-around;
+}
+
+.plswork{
+    display: flex;
+    justify-content: space-around;
+}
+
+.board{
+    margin:10px;
+    background-color:rgb(128, 58, 128); 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap:10px;
+    
+}
+
+.gameoption{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(220, 119, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.x::before{
+    content: 'X';
+    font-family: 'Fredoka One';
+    font-size: 96px;
+}
+.o::before{
+content: 'O';
+font-family: 'Fredoka One';
+font-size: 96px;
+}
+
+  
+.reset:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.gameoption:hover{
+    cursor: pointer;
+}
+h3:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.hide{
+    display: none;
+}
+
+
