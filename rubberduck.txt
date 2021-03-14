@@ -1,0 +1,35 @@
+JS
+    - players object
+        - 2 player objects
+            - player turn boolean
+            - character
+            - wins
+    - game object
+        - whos turn
+        - gamePlay()
+        - gameOver()
+        - games played
+
+    
+        - gamePlay()
+            - highlight player turn (random)
+                - if(player turn) {
+                    make selection, 
+                    show selection in square,
+                    game.gameOver()?
+                    next player turn
+                }
+
+        - gameOver()
+            - check for winner/tie/cat
+
+TODO:
+    ^ check cat
+    ^ player cannot select a marked square
+    - show winner
+        - add point to winner
+    ^ reset btn
+    - fix alert bug by calling seperate func in game.gameOver
+
+BONUS:
+    - icon characters
