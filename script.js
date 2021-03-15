@@ -13,7 +13,7 @@ const board = document.querySelectorAll('.grid-square')
 const SquareStates = {
     X: "X",
     O: "O",
-    EMPTY: "empty"
+    EMPTY: "Empty"
 }
 
 const isTaken = (squareId) => {
@@ -28,7 +28,7 @@ const isO = (squareId) => {
     return !document.getElementById('oimg' + squareId).classList.contains('hidden')
 }
 
-const getSquare = (squareId) => {
+const getSquareStates = (squareId) => {
     if (isX(squareId)){
         return SquareStates.X
     }
@@ -40,22 +40,21 @@ const getSquare = (squareId) => {
     }
 }
 
-const getTurnNumber = () => {
-    turnNbr = 0
+const getTurn = () => {
+    turn = 0
     for (let i = 0; i < board.length; i++){
         if (isTaken(i)){
-            turnNbr++
+            turn++
         }
     }
-    return turnNbr
+    return turn
 }
 
 const updateTurn = () => {
     if (gameState !== GameStates.INPROGRESS) {
         return
     }
-    turnNbr = getTurnNumber()
-    let turn = turnNbr % 2 === 0 ? "X" : "O"
+    let turn = getTurn() % 2 === 0 ? "X" : "O"
     document.getElementById("turntxt").innerHTML = "It is " + turn + "'s turn."
 }
 
@@ -77,10 +76,10 @@ const checkVictory = (squareA, squareB, squareC) => {
     if (gameState !== GameStates.INPROGRESS) {
         return
     }
-    if (getSquare(squareA) !== SquareStates.EMPTY &&
-        getSquare(squareA) === getSquare(squareB) &&
-        getSquare(squareB) === getSquare(squareC)) {
-        console.log(getSquare(squareA) + ' wins!')
+    if (getSquareStates(squareA) !== SquareStates.EMPTY &&
+        getSquareStates(squareA) === getSquareStates(squareB) &&
+        getSquareStates(squareB) === getSquareStates(squareC)) {
+        console.log(getSquareStates(squareA) + ' wins!')
         gameState = isX(squareA) ? GameStates.XVICTORY : GameStates.OVICTORY
     }
 }
@@ -113,19 +112,22 @@ const evaluateBoard = () => {
     }
 }
 
+// Start of execution
+
 evaluateBoard()
+
 for (let i = 0; i < board.length; i++) {
     board[i].addEventListener('click', (event) => {
         // If the game is over or the square is taken, nothing to do
         if (gameState !== GameStates.INPROGRESS || isTaken(i)) {
             return
         }
-        let turnNbr = getTurnNumber()
-        if (turnNbr % 2 === 0){
+        let turn = getTurn()
+        if (turn % 2 === 0){
             console.log('X to square ' + i)
             document.getElementById('ximg' + i).classList.remove('hidden')
         }
-        else if (turnNbr % 2 === 1){
+        else if (turn % 2 === 1){
             console.log('O to square ' + i)
             document.getElementById('oimg' + i).classList.remove('hidden')
         }
