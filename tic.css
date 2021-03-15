@@ -1,0 +1,29 @@
+.container {
+	display: flex;
+	flex-flow: row wrap; 
+	width: 550px;
+	justify-content: center;
+	margin: auto;
+}
+
+.square {
+	border: 1px solid #000;
+	width: 175px;
+	height: 175px;
+}
+
+.x-pic {
+	background-image: url("x.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.o-pic {
+	background-image: url("o.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+h1 {
+	text-align: center;
+}
