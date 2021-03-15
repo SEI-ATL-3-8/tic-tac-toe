@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: grey;
+}
+
+.mainBox{
+border: 1px solid black;
+display: flex;
+flex-wrap: wrap;
+width: 606px;
+height: 606px;
+}
+
+.squares{
+border: 1.01px solid black;
+background: darkgrey;
+height: 200px;
+width: 200px;
+display:flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.x::before {
+    content: 'x';
+    font-size: 200px;
+    color: red;
+   
+}
+
+.o::before {
+    content: 'o';
+    font-size: 200px;
+    
+}
+
+.hidden{
+    display: none;
+}
