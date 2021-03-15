@@ -61,8 +61,13 @@ const checkFilled = () => {
 }
 
 const resetGame = (result) => {
-    message.innerText = 'Resetting Game...' + result;
-    gridTable.style.display = 'none';
+    message.innerText = result;
+    
+    setTimeout(() => {
+        message.innerText = 'Resetting Game...';
+        gridTable.style.display = 'none';
+    },2000);
+
     setTimeout(() => {
         gridTable.style.display = 'grid';
         scoreGrid = [['','',''] ,['','',''], ['','','']];
