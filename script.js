@@ -1,13 +1,16 @@
-const gameOutcomes = {
-    X: "X wins",
-    Y: "Y wins",
-    TIE: "Tie", 
-    INPROGRESS: "In Progress"
+// Possible states of the game
+const GameStates = {
+    INPROGRESS: "In Progress",
+    XVICTORY: "X wins",
+    OVICTORY: "O wins",
+    TIE: "Tie"
 }
-let outcome = gameOutcomes.INPROGRESS
+let gameState = GameStates.INPROGRESS
 
-const allGrids = document.querySelectorAll('.grid-square')
-const squareVals = {
+const board = document.querySelectorAll('.grid-square')
+
+// Possible states of a square
+const SquareStates = {
     X: "X",
     O: "O",
     EMPTY: "empty"
@@ -27,19 +30,19 @@ const isO = (squareId) => {
 
 const getSquare = (squareId) => {
     if (isX(squareId)){
-        return squareVals.X
+        return SquareStates.X
     }
     else if (isO(squareId)){
-        return squareVals.O
+        return SquareStates.O
     }
     else {
-        return squareVals.EMPTY
+        return SquareStates.EMPTY
     }
 }
 
 const getTurnNumber = () => {
     turnNbr = 0
-    for (let i = 0; i < allGrids.length; i++){
+    for (let i = 0; i < board.length; i++){
         if (isTaken(i)){
             turnNbr++
         }
@@ -48,7 +51,7 @@ const getTurnNumber = () => {
 }
 
 const updateTurn = () => {
-    if (outcome !== gameOutcomes.INPROGRESS) {
+    if (gameState !== GameStates.INPROGRESS) {
         return
     }
     turnNbr = getTurnNumber()
@@ -57,28 +60,28 @@ const updateTurn = () => {
 }
 
 const checkTie = () => {
-    if (outcome !== gameOutcomes.INPROGRESS) {
+    if (gameState !== GameStates.INPROGRESS) {
         return
     }
     let movesAvailable = false
-    for (let i = 0; i < allGrids.length && !movesAvailable; i++){
+    for (let i = 0; i < board.length && !movesAvailable; i++){
         movesAvailable = !isTaken(i)
     }
     if (!movesAvailable) { 
-        console.log('Ladies and Gents we\'ve got a tie!')
-        outcome = gameOutcomes.TIE
+        console.log('Tie!')
+        gameState = GameStates.TIE
     }
 }
 
 const checkVictory = (squareA, squareB, squareC) => {
-    if (outcome !== gameOutcomes.INPROGRESS) {
+    if (gameState !== GameStates.INPROGRESS) {
         return
     }
-    if (getSquare(squareA) !== squareVals.EMPTY &&
+    if (getSquare(squareA) !== SquareStates.EMPTY &&
         getSquare(squareA) === getSquare(squareB) &&
         getSquare(squareB) === getSquare(squareC)) {
-        console.log('Ladies and Gents we\'ve got a winner!')
-        outcome = isX(squareA) ? gameOutcomes.X : gameOutcomes.O
+        console.log(getSquare(squareA) + ' wins!')
+        gameState = isX(squareA) ? GameStates.XVICTORY : GameStates.OVICTORY
     }
 }
 
@@ -92,12 +95,12 @@ const evaluateBoard = () => {
     checkVictory(6, 4, 2) // increasing slope
     checkVictory(0, 4, 8) // decreasing slope   
     checkTie()
-    if (outcome !== gameOutcomes.INPROGRESS) {
+    if (gameState !== GameStates.INPROGRESS) {
         let gameOver = "Game Over. "
-        if (outcome === gameOutcomes.X) {
+        if (gameState === GameStates.XVICTORY) {
             gameOver += "X Wins!"
         }
-        else if (outcome === gameOutcomes.O) {
+        else if (gameState === GameStates.OVICTORY) {
             gameOver += "O Wins!"
         }
         else {
@@ -111,14 +114,10 @@ const evaluateBoard = () => {
 }
 
 evaluateBoard()
-for (let i = 0; i < allGrids.length; i++) {
-    allGrids[i].addEventListener('click', (event) => {
-        if (outcome !== gameOutcomes.INPROGRESS) {
-            console.log('game over baby i\'m not doing shit')
-            return
-        }
-        if (isTaken(i)){
-            console.log('boyfriend' + i + ' is off the table')
+for (let i = 0; i < board.length; i++) {
+    board[i].addEventListener('click', (event) => {
+        // If the game is over or the square is taken, nothing to do
+        if (gameState !== GameStates.INPROGRESS || isTaken(i)) {
             return
         }
         let turnNbr = getTurnNumber()
@@ -135,11 +134,11 @@ for (let i = 0; i < allGrids.length; i++) {
 );}
 
 document.getElementById("reset").addEventListener("click", (event) => {
-    for (let i = 0; i < allGrids.length; i++){
+    for (let i = 0; i < board.length; i++){
         document.getElementById('oimg' + i).classList.add('hidden')
         document.getElementById('ximg' + i).classList.add('hidden')
     }
-    outcome = gameOutcomes.INPROGRESS
+    gameState = GameStates.INPROGRESS
     evaluateBoard()
 })
 
