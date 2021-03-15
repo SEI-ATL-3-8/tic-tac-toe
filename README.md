@@ -19,6 +19,7 @@ We will be making a Tic Tac Toe game using all of these concepts.
   * You will also need a variable to keep track of moves. This will be used to indicate whether or not to draw an `X` or an `O`
 
 ## Requirements
+
 * A user should be able to click on different squares to make a move.
 * Every click will alternate between marking an `X` and `O`
 * Upon marking of an individual cell, use JavaScript to add an `X` or `O` to the cell, according to whose turn it is.
