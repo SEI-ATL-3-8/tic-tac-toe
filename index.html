@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Tim's Tic Tac Toe</title>
+  <script src="script.js" async defer></script>  
+</head>
+<body>
+
+<main class="primaryBox">
+  <h2>Tim's Tic Tac Toe</h2>
+  <div class="secondaryBox">
+    <div class="infoBox">
+      <div class="instructionBox L">
+        <p>Welcome to Tim's Tic Tac Toe!</p>
+        <p>Choose your game mode, click an empty space in the 3x3 grid, and be the first to have 3 marks in a row!</p>
+        <p>Player 1 always goes first as X.</p>
+        <p>Wins persist through resets unless you reset wins.</p>
+      </div>
+      <div class="optionBox L">
+        <p>Select your game mode:</p>
+        <p>Human vs. Human</p>
+        <p id="draft">Human vs. AI (under construction)</p>
+        <div class="hidden">
+          <input type="radio" id="pvp" name="gameMode" value="pvp">
+          <label for="pvp">Human vs. Human</label>
+        </div>
+        <div class="hidden">
+          <input type="radio" id="pve" name="gameMode" value="pve">
+          <label for="pve">Human vs. AI</label>
+        </div>
+        <button class="btn-changeState hidden">Start new game mode</button>
+        <button class="btn-reset-mode">Reset current mode</button>
+        <p></p>
+        <p></p>
+        <p id="turnOrdertext">Next Turn is Player One or X</p>
+        
+      </div>
+      <div class="trackerBox">
+        <p>Current Win Tracker</p>
+        <p>Player One: <span id="P1-Score">0</span></p>
+        <p>Player Two: <span id="P2-Score">0</span></p>
+        <p class="hidden">AI Player Two: <span id="AI-Score">0</span></p>
+        <button class="btn-reset-wins">Reset wins</button> 
+        
+      </div>
+    
+    </div>
+    <div class="tertiaryBox">
+          <div class="playerXBox">
+            <h4 class="playerOneFont">PLAYER ONE:</h4>
+            <h4 class="playerOneFont">Places X</h4>
+            <img src="assets/Win.jpg" class="hidden" id="P1-Win">
+            <img src="assets/Tie.jpg" class="hidden" id="P1-Tie">
+          </div>
+          <div class="gameBox">
+            <img src="assets/gameover.png" class="hidden" id="GameOver">
+            <div class="gridBox top L" id="1">
+              <img src="assets/Xc.jpg" class="hidden" id="1-X">
+              <img src="assets/Oc.jpg" class="hidden" id="1-O">
+            </div>
+            <div class="gridBox top M" id="2">
+              <img src="assets/Xc.jpg" class="hidden" id="2-X">
+              <img src="assets/Oc.jpg" class="hidden" id="2-O">
+            </div>  
+            <div class="gridBox top R" id="3">
+              <img src="assets/Xc.jpg" class="hidden" id="3-X">
+              <img src="assets/Oc.jpg" class="hidden" id="3-O">
+            </div>  
+            <div class="gridBox mid L" id="4">
+              <img src="assets/Xc.jpg" class="hidden" id="4-X">
+              <img src="assets/Oc.jpg" class="hidden" id="4-O">
+            </div>  
+            <div class="gridBox mid M" id="5">
+              <img src="assets/Xc.jpg" class="hidden" id="5-X">
+              <img src="assets/Oc.jpg" class="hidden" id="5-O">
+            </div>  
+            <div class="gridBox mid R" id="6">
+              <img src="assets/Xc.jpg" class="hidden" id="6-X">
+              <img src="assets/Oc.jpg" class="hidden" id="6-O">
+            </div>  
+            <div class="gridBox bot L" id="7">
+              <img src="assets/Xc.jpg" class="hidden" id="7-X">
+              <img src="assets/Oc.jpg" class="hidden" id="7-O">
+            </div>  
+            <div class="gridBox bot M" id="8">
+              <img src="assets/Xc.jpg" class="hidden" id="8-X">
+              <img src="assets/Oc.jpg" class="hidden" id="8-O">
+            </div>  
+            <div class="gridBox bot R" id="9">
+              <img src="assets/Xc.jpg" class="hidden" id="9-X">
+              <img src="assets/Oc.jpg" class="hidden" id="9-O">
+            </div>  
+          </div>
+          
+          <div class="playerOBox">
+            <h4 class="playerTwoFont">PLAYER TWO:</h4>
+            <h4 class="playerTwoFont">Places O</h4>
+            <img src="assets/Win.jpg" class="hidden" id="P2-Win">
+            <img src="assets/Tie.jpg" class="hidden" id="P2-Tie">
+          </div>
+    </div>        
+  </div>  
+
+</main>
+
+
+
+
+</body>
+</html>

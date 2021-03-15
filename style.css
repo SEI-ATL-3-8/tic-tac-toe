@@ -1,0 +1,152 @@
+body {
+    font-family: "Helvetica"
+    
+}
+
+p {
+  margin: 5px;
+}
+
+h4 {
+  margin: 0;
+}
+
+.playerOneFont {
+  color: #0376BB;
+}
+
+.playerTwoFont {
+  color: #ED230D;
+}
+
+button {
+  margin: 5px;
+  width: 1px;
+}
+
+.primaryBox {
+  /* border: 1px dotted black;  */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+}
+
+.secondaryBox {
+  /* border: 1px dotted red; */ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 800px;
+  width: 810px;
+}
+
+.tertiaryBox {
+  /* border: 1px dotted green; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+  width: 810px;
+}
+
+.infoBox {
+  height: 200px;
+  width: 810px;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  
+}
+
+.instructionBox, .optionBox, .trackerBox {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 270px;
+  /* border: 1px solid pink; */
+}
+
+
+
+.optionBox {
+  align-items: center;
+}
+
+
+
+
+.gameBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid purple; */
+  width: 310px;
+  height: 300px;
+}
+
+.playerXBox, .playerOBox {
+  /* border: 1px dotted purple; */
+  height: 300px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  width: 200px;
+  height: 20px;
+}
+
+.gridBox {
+  /* border: 1px solid green; */
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top {
+  border-bottom: 1px solid black;
+}
+
+.R {
+  border-left: 1px solid black;
+}
+
+.bot {
+  border-top: 1px solid black;
+}
+
+.L {
+  border-right: 1px solid black;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.played {
+  border: solid 0.1px white;
+}
+
+#GameOver {
+  position: absolute;
+}
+
+#P1-Win, #P1-Tie, #P2-Win, #P2-Tie {
+  border-radius: 15px;
+}
+
+#draft {
+  text-decoration: line-through;
+}
