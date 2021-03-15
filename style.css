@@ -1,0 +1,26 @@
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    border-color: blue;
+    border-style: dotted;
+    flex-wrap: wrap;
+}
+
+.square {
+    display: flex;
+    border-style: solid;
+    border-color: red;
+    width: 150px;
+    height: 150px;
+    background-color: burlywood;
+    font-size: 150px;
+}
+
+.mainUI {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
