@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src = "script.js" aync defer></script>
+    <title>TIC TAC TOE</title>
+</head>
+<body>
+  <img src = "0876479dd728a4555ef519eb5d346419.png"class="headerpic"></div>
+  <h1></h1>
+  <img class="sketch">
+  <button type="button" class="startButton">Press Start!!</button>
+      <figure class="grid-container">
+        <figure class="game" id="game">
+          <div class="xarray oarray" id="x1 o1 space space1">1</div>
+          <div class="xarray oarray" id="x2 o2 space space2">2</div>
+          <div class="xarray oarray" id="x3 o3 space space3">3</div>
+          <div class="xarray oarray" id="x4 o4 space space4">4</div>
+          <div class="xarray oarray" id="x5 o5 space space5">5</div>
+          <div class="xarray oarray" id="x6 o6 space space6">6</div>
+          <div class="xarray oarray" id="x7 o7 space space7">7</div>
+          <div class="xarray oarray" id="x8 o8 space space8">8</div>
+          <div class="xarray oarray" id="x9 o9 space space9">9</div>
+        </figure>
+      </figure>
+    <figure class =  "timer">
+      <p>You're running out of time!</p>
+      <p class = "timerbutton" id="countdown" onlick="timesUp"></p>
+    </figure>
+
+  <div class="bottom">
+    <h2 id="winner">And, the winner is</h2>
+    <button onclick="reset_board()">RESET BOARD</button>
+  </div>
+</body>
+</html>
