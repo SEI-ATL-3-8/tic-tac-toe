@@ -1,27 +1,17 @@
-
-// setTimeout(myAlert, 32000)
 const gameOutcomes = {
     X: "X wins",
     Y: "Y wins",
     TIE: "Tie", 
     INPROGRESS: "In Progress"
 }
+let outcome = gameOutcomes.INPROGRESS
+
+const allGrids = document.querySelectorAll('.grid-square')
 const squareVals = {
     X: "X",
     O: "O",
     EMPTY: "empty"
 }
-const allGrids = document.querySelectorAll('.grid-square')
-let outcome = gameOutcomes.INPROGRESS
-
-document.getElementById("reset").addEventListener("click", (event) => {
-    for (let i = 0; i < allGrids.length; i++){
-        document.getElementById('oimg' + i).classList.add('hidden')
-        document.getElementById('ximg' + i).classList.add('hidden')
-    }
-    outcome = gameOutcomes.INPROGRESS
-    evaluateBoard()
-})
 
 const isTaken = (squareId) => {
     return isX(squareId) || isO(squareId)
@@ -45,19 +35,25 @@ const getSquare = (squareId) => {
     else {
         return squareVals.EMPTY
     }
-
 }
 
-const checkVictory = (squareA, squareB, squareC) => {
+const getTurnNumber = () => {
+    turnNbr = 0
+    for (let i = 0; i < allGrids.length; i++){
+        if (isTaken(i)){
+            turnNbr++
+        }
+    }
+    return turnNbr
+}
+
+const updateTurn = () => {
     if (outcome !== gameOutcomes.INPROGRESS) {
         return
     }
-    if (getSquare(squareA) !== squareVals.EMPTY &&
-        getSquare(squareA) === getSquare(squareB) &&
-        getSquare(squareB) === getSquare(squareC)) {
-        console.log('Ladies and Gents we\'ve got a winner!')
-        outcome = isX(squareA) ? gameOutcomes.X : gameOutcomes.O
-    }
+    turnNbr = getTurnNumber()
+    let turn = turnNbr % 2 === 0 ? "X" : "O"
+    document.getElementById("turntxt").innerHTML = "It is " + turn + "'s turn."
 }
 
 const checkTie = () => {
@@ -74,7 +70,19 @@ const checkTie = () => {
     }
 }
 
-const checkForEndOfGame = () => {
+const checkVictory = (squareA, squareB, squareC) => {
+    if (outcome !== gameOutcomes.INPROGRESS) {
+        return
+    }
+    if (getSquare(squareA) !== squareVals.EMPTY &&
+        getSquare(squareA) === getSquare(squareB) &&
+        getSquare(squareB) === getSquare(squareC)) {
+        console.log('Ladies and Gents we\'ve got a winner!')
+        outcome = isX(squareA) ? gameOutcomes.X : gameOutcomes.O
+    }
+}
+
+const evaluateBoard = () => {
     checkVictory(0, 1, 2) // top row
     checkVictory(3, 4, 5) // middle row
     checkVictory(6, 7, 8) // bottom row
@@ -97,31 +105,9 @@ const checkForEndOfGame = () => {
         }
         document.getElementById("turntxt").innerHTML = gameOver
     }
-}
-
-const getTurnNumber = () => {
-    turnNbr = 0
-    for (let i = 0; i < allGrids.length; i++){
-        if (isTaken(i)){
-            turnNbr++
-        }
+    else {
+        updateTurn()
     }
-    return turnNbr
-}
-
-const evaluateBoard = () => {
-    let turnNbr = getTurnNumber()
-    checkForEndOfGame()
-    setTurn(turnNbr)
-    return turnNbr;
-}
-
-const setTurn = (turnNbr) => {
-    if (outcome !== gameOutcomes.INPROGRESS) {
-        return
-    }
-    let turn = turnNbr % 2 === 0 ? "X" : "O"
-    document.getElementById("turntxt").innerHTML = "It is " + turn + "'s turn."
 }
 
 evaluateBoard()
@@ -148,7 +134,12 @@ for (let i = 0; i < allGrids.length; i++) {
     }
 );}
 
-
-
-
+document.getElementById("reset").addEventListener("click", (event) => {
+    for (let i = 0; i < allGrids.length; i++){
+        document.getElementById('oimg' + i).classList.add('hidden')
+        document.getElementById('ximg' + i).classList.add('hidden')
+    }
+    outcome = gameOutcomes.INPROGRESS
+    evaluateBoard()
+})
 
