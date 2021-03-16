@@ -1,0 +1,41 @@
+h1 {
+  text-align: center;
+  color: purple;
+}
+
+#display-turn {
+  text-align: center;
+  font-size: 2em;
+}
+
+#single-letter-turn {
+  text-transform: uppercase;
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 650px;
+  margin: auto;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  font-size: 10em;
+  text-align: center;
+  vertical-align: center;
+}
+
+.box.x:before {
+  content: 'X'
+}
+
+.box.o:before {
+  content: 'O'
+}
+
+.box.won {
+  background: chartreuse;
+}
