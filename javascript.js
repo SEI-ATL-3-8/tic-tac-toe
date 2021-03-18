@@ -28,7 +28,7 @@ var game = document.getElementById("game");
      isGameOver()
  }
 
- function restart() {
+ function reset() {
      count = 0;
      goo = 0;
      game.innerHTML = "";
@@ -36,6 +36,8 @@ var game = document.getElementById("game");
          game.innerHTML;
      }
  }
+
+
 
 // false - game running
 // true - game over
@@ -60,7 +62,7 @@ var game = document.getElementById("game");
          }
      }
      if (!!rez || index.length == 0) {
-         setTimeout(restart, 3000);
+         setTimeout(reset, 3000);
          return true
      }
      return false
